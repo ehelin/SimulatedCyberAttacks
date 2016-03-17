@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:62271/BucketListServices.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="ProcessUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="encodedUser" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="encodedPass" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ProcessUserResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessUserRegistration">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="encodedUser" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="encodedEmail" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="encodedPass" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessUserRegistrationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ProcessUserRegistrationResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBucketListItems">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="encodedUserName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="encodedSortString" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="encodedToken" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBucketListItemsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetBucketListItemsResult" nillable="true" type="q1:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpsertBucketListItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="encodedBucketListItems" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="encodedUser" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="encodedToken" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpsertBucketListItemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="UpsertBucketListItemResult" nillable="true" type="q2:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteBucketListItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="bucketListDbId" type="xs:int" />
+        <xs:element minOccurs="0" name="encodedUser" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="encodedToken" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteBucketListItemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DeleteBucketListItemResult" nillable="true" type="q3:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

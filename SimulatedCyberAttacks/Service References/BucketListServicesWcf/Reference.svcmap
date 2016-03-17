@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="f5389c98-db4f-4ba5-b728-4e809309417b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:62271/BucketListServices.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="BucketListServices.disco" MetadataType="Disco" ID="cd8c648e-3482-40e5-b554-9b28c66b7fc2" SourceId="1" SourceUrl="http://localhost:62271/BucketListServices.svc?disco" />
+    <MetadataFile FileName="BucketListServices.wsdl" MetadataType="Wsdl" ID="922df794-c4ab-4f9f-b177-7e7f9d591eb0" SourceId="1" SourceUrl="http://localhost:62271/BucketListServices.svc?wsdl" />
+    <MetadataFile FileName="BucketListServices.xsd" MetadataType="Schema" ID="d3e89619-6810-4922-91d4-c74461dcd94c" SourceId="1" SourceUrl="http://localhost:62271/BucketListServices.svc?xsd=xsd1" />
+    <MetadataFile FileName="BucketListServices1.xsd" MetadataType="Schema" ID="d98df11a-c449-4efd-9c07-9d42b62a6175" SourceId="1" SourceUrl="http://localhost:62271/BucketListServices.svc?xsd=xsd0" />
+    <MetadataFile FileName="BucketListServices2.xsd" MetadataType="Schema" ID="b30cae5c-d616-4596-9e1c-37cf542f23fe" SourceId="1" SourceUrl="http://localhost:62271/BucketListServices.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

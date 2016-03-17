@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Driver", "SimulatedCyberAttacks\Driver.csproj", "{F99F8380-0C14-4CEF-907D-440CA7F2E887}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared.csproj", "{3D101186-C557-49B6-A6F6-709AF7090036}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "supportdlls", "supportdlls", "{8455F069-01E3-42E2-9F34-6A40B6816310}"
+	ProjectSection(SolutionItems) = preProject
+		dlls\IEDriverServer.exe = dlls\IEDriverServer.exe
+		dlls\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll = dlls\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+		dlls\Selenium.WebDriverBackedSelenium.dll = dlls\Selenium.WebDriverBackedSelenium.dll
+		dlls\ThoughtWorks.Selenium.Core.dll = dlls\ThoughtWorks.Selenium.Core.dll
+		dlls\WebDriver.dll = dlls\WebDriver.dll
+		dlls\WebDriver.Support.dll = dlls\WebDriver.Support.dll
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F99F8380-0C14-4CEF-907D-440CA7F2E887}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F99F8380-0C14-4CEF-907D-440CA7F2E887}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F99F8380-0C14-4CEF-907D-440CA7F2E887}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F99F8380-0C14-4CEF-907D-440CA7F2E887}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D101186-C557-49B6-A6F6-709AF7090036}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D101186-C557-49B6-A6F6-709AF7090036}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D101186-C557-49B6-A6F6-709AF7090036}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D101186-C557-49B6-A6F6-709AF7090036}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
