@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 
 namespace SimulatedCyberAttacks.attacks.web
 {
@@ -56,6 +57,11 @@ namespace SimulatedCyberAttacks.attacks.web
             attackStrings.Add("[");
             attackStrings.Add("%");
             attackStrings.Add("_");
+        }
+
+        public void Setup()
+        {
+
         }
     }
 }

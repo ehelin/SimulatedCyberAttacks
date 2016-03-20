@@ -43,6 +43,13 @@ namespace Shared
 
             return value;
         }
+        public static void Setup()
+        {            
+            Console.WriteLine("Press key to start!");
+            Console.Read();
+            
+            Utilities.ClearDb();
+        }
         public static void ClearDb()
         {
             RunDbCommand("truncate table [Bucket].[User]");

@@ -9,6 +9,11 @@ namespace SimulatedCyberAttacks.attacks.web
 
         protected void SubmitAttackToLoginPage(string injectionString)
         {         
+            browser.FindElement(By.Id("loginDesktopUserName")).Clear();
+            browser.FindElement(By.Id("loginDesktopPassWord")).Clear();
+            
+            System.Threading.Thread.Sleep(_testStepInterval);
+
             browser.FindElement(By.Id("loginDesktopUserName")).SendKeys(injectionString);
             browser.FindElement(By.Id("loginDesktopPassWord")).SendKeys(injectionString);
             
@@ -16,15 +21,10 @@ namespace SimulatedCyberAttacks.attacks.web
 
             IWebElement link = browser.FindElement(By.Id("loginDesktopSubmitClick"));
             link.Click();
-        }        
-        protected void BringUpLoginPage()
-        {           
-            browser.Navigate().GoToUrl(Url);
-            string pageText = browser.FindElement(By.TagName("body")).Text;
-            
-            IWebElement link = browser.FindElementByLinkText("here");
-            link.Click();
             System.Threading.Thread.Sleep(_testStepInterval);
-        }
+
+            browser.SwitchTo().Alert().Accept();
+            System.Threading.Thread.Sleep(_testStepInterval);
+        }   
     }
 }
