@@ -30,14 +30,18 @@ namespace SimulatedCyberAttacks.attacks.web.rest
 
             foreach(string attackString in attackStrings)
             {
-                //System.Console.WriteLine("Running simulated attack for character '" + injectionString + "'");
+                System.Console.WriteLine("Running simulated attack for character '" + injectionString + "'");
 
                 //IEnumerable<string> values = await GetValues(c);
                 
-                //string token = await ProcessUser(c, attackString);
-                //bool registered = await ProcessRegistration(c, attackString);
+                string token = await ProcessUser(c, attackString);
+
+                bool registered = await ProcessRegistration(c, attackString);
+                
                 string[] bucketListItems = await GetBucketListItems(c, attackString);
+
                 string[] upsertResults = await Upsert(c, attackString);
+
                 string[] deleteResults = await Delete(c, attackString);
             }
 

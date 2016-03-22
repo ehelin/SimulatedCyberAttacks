@@ -101,7 +101,7 @@ namespace SimulatedCyberAttacks.attacks.web.rest
                 
         public async Task<string[]> Upsert(string bucketListItems, string userName, string token)
         {
-            string callUrl = "/api/PostUpsert";
+            string callUrl = "/api/BucketListUpsert";
             Dictionary<string, string> values = new Dictionary<string, string>();
             values.Add("encodedBucketListItems", bucketListItems);
             values.Add("encodedUser", userName);
@@ -121,7 +121,7 @@ namespace SimulatedCyberAttacks.attacks.web.rest
             }
             catch (Exception e)
             {
-                throw e;
+                Console.WriteLine(e.Message);
             }
             
             return results;
@@ -129,11 +129,11 @@ namespace SimulatedCyberAttacks.attacks.web.rest
         
         public async Task<string[]> Delete(string bucketListDbId, string encodedUser, string encodedToken)
         {
-            string callUrl = "/api/PostDelete";
+            string callUrl = "/api/BucketListDelete";
             Dictionary<string, string> values = new Dictionary<string, string>();
             values.Add("bucketListDbId", bucketListDbId);
             values.Add("encodedUser", encodedUser);
-            values.Add("encodedUser", encodedToken);
+            values.Add("encodedToken", encodedToken);
             string result = String.Empty;
             string[] results = null;
 
@@ -149,7 +149,7 @@ namespace SimulatedCyberAttacks.attacks.web.rest
             }
             catch (Exception e)
             {
-                throw e;
+                Console.WriteLine(e.Message);
             }
             
             return results;
