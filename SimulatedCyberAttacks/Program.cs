@@ -19,17 +19,21 @@ namespace SimulatedCyberAttacks
 
             //RunBasicTests();
             //RunBasicAttacks();
-            //RunServiceSimumatedSqlInjectionAttacks();
-            RunClientSimumatedSqlInjectionAttacks();
+            RunServiceSimumatedSqlInjectionAttacks();
+            //RunClientSimumatedSqlInjectionAttacks();
 
             Console.WriteLine("Simulated attacks completed (localhost targets only!) - " + DateTime.Now.ToString());
         }        
         private static void RunServiceSimumatedSqlInjectionAttacks()
         { 
             Console.WriteLine("Running service simulated sql injection tests (localhost targets only!)");
-            Utilities.Setup();
-
-            ISqlInjection siService = new SimulatedCyberAttacks.attacks.web.wcf.SqlInjection();
+            
+            //Utilities.Setup();
+            //ISqlInjection siService = new SimulatedCyberAttacks.attacks.web.wcf.SqlInjection();
+            //siService.RunAttack();
+            
+            //Utilities.Setup();
+            ISqlInjection siService = new SimulatedCyberAttacks.attacks.web.rest.SqlInjection("http://localhost:12738");
             siService.RunAttack();
         }
         private static void RunClientSimumatedSqlInjectionAttacks()

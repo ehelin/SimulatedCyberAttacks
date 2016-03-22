@@ -118,8 +118,7 @@ namespace SimulatedCyberAttacks.attacks.web.wcf
             }
 
             return result;
-        }
-        
+        }        
         private string[] DeleteBucketListItem(string injectionString)
         {    
             string[] result = null;
