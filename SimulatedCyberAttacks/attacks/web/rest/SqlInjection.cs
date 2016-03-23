@@ -8,7 +8,6 @@ using Shared;
 
 namespace SimulatedCyberAttacks.attacks.web.rest
 {
-    //TODO - implement this class
     public class SqlInjection : WebServiceAttack, ISqlInjection
     {
         public SqlInjection(string pUrl)
