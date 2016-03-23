@@ -14,6 +14,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{3A66D9
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQL", "SQL", "{A201FA03-5BB9-4D5D-BE15-9A5B0A61EC92}"
+	ProjectSection(SolutionItems) = preProject
+		SQL\CreateDb.sql = SQL\CreateDb.sql
+		SQL\CreateSchema.sql = SQL\CreateSchema.sql
+		SQL\TableCreates.sql = SQL\TableCreates.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
