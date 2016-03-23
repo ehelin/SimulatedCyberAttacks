@@ -19,16 +19,16 @@ namespace SimulatedCyberAttacks
         private static void RunSimumatedAttacks()
         {
             Console.WriteLine("Starting simulated attacks (localhost targets only!) - " + DateTime.Now.ToString());
-
-            //Uncomment these tests, comment out the web api and run Service as start up project on Tgimba project
-            SimulatedInjectionAttackesComplete = true;
-            RunBasicTests();
-            //RunBasicAttacks();
-            RunServiceSimumatedSqlInjectionAttacksWcf();  
-
+            
             //Run these tests separately from the ones above
-            //RunClientSimumatedSqlInjectionAttacks();
-            //RunServiceSimumatedSqlInjectionAttacksWebApi();
+            RunClientSimumatedSqlInjectionAttacks();
+            RunServiceSimumatedSqlInjectionAttacksWebApi();
+
+            ////Uncomment these tests, comment out the web api and run Service as start up project on Tgimba project
+            //SimulatedInjectionAttackesComplete = true;
+            //RunBasicTests();
+            ////RunBasicAttacks();
+            //RunServiceSimumatedSqlInjectionAttacksWcf();  
 
             Console.WriteLine("Simulated attacks completed (localhost targets only!) - " + DateTime.Now.ToString());
         }     
