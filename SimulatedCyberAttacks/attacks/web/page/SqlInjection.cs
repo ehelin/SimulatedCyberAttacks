@@ -26,6 +26,10 @@ namespace SimulatedCyberAttacks.attacks.web.page
                 System.Console.WriteLine("Running simulated attack for character '" + injectionString + "'");
                 this.SubmitAttackToLoginPage(injectionString);
             }
+
+            this.browser.Close();
+            this.browser.Dispose();
+            this.browser = null;
         }  
     }
 }

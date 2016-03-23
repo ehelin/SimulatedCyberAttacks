@@ -7,6 +7,8 @@ namespace SimulatedCyberAttacks
     class Program
     {
         public static bool SimulatedInjectionAttackesComplete = false;
+        private static string WebApiUrl = "http://http://localhost:12738";
+
         static void Main(string[] args)
         {
             RunSimumatedAttacks();
@@ -18,29 +20,38 @@ namespace SimulatedCyberAttacks
         {
             Console.WriteLine("Starting simulated attacks (localhost targets only!) - " + DateTime.Now.ToString());
 
-            //RunBasicTests();
+            //Uncomment these tests, comment out the web api and run Service as start up project on Tgimba project
+            SimulatedInjectionAttackesComplete = true;
+            RunBasicTests();
             //RunBasicAttacks();
-            RunServiceSimumatedSqlInjectionAttacks();
-            //RunClientSimumatedSqlInjectionAttacks();
+            RunServiceSimumatedSqlInjectionAttacksWcf();  
 
+            //Run these tests separately from the ones above
+            //RunClientSimumatedSqlInjectionAttacks();
+            //RunServiceSimumatedSqlInjectionAttacksWebApi();
+
+            Console.WriteLine("Simulated attacks completed (localhost targets only!) - " + DateTime.Now.ToString());
+        }     
+        private static void RunServiceSimumatedSqlInjectionAttacksWebApi()
+        { 
+            Console.WriteLine("Running web api service simulated sql injection tests (localhost targets only!)");
+            
+            Utilities.Setup();
+            ISqlInjection siService = new SimulatedCyberAttacks.attacks.web.rest.SqlInjection(WebApiUrl);
+            siService.RunAttack();
+            
             while (!SimulatedInjectionAttackesComplete)
             {
                 System.Threading.Thread.Sleep(1000);
                 int waitForIt = 1;
             }
-
-            Console.WriteLine("Simulated attacks completed (localhost targets only!) - " + DateTime.Now.ToString());
-        }        
-        private static void RunServiceSimumatedSqlInjectionAttacks()
+        }     
+        private static void RunServiceSimumatedSqlInjectionAttacksWcf()
         { 
-            Console.WriteLine("Running service simulated sql injection tests (localhost targets only!)");
+            Console.WriteLine("Running wcf service simulated sql injection tests (localhost targets only!)");
             
-            //Utilities.Setup();
-            //ISqlInjection siService = new SimulatedCyberAttacks.attacks.web.wcf.SqlInjection();
-            //siService.RunAttack();
-            
-            //Utilities.Setup();
-            ISqlInjection siService = new SimulatedCyberAttacks.attacks.web.rest.SqlInjection("http://localhost:12738");
+            Utilities.Setup();
+            ISqlInjection siService = new SimulatedCyberAttacks.attacks.web.wcf.SqlInjection();
             siService.RunAttack();
         }
         private static void RunClientSimumatedSqlInjectionAttacks()
@@ -48,7 +59,7 @@ namespace SimulatedCyberAttacks
             Console.WriteLine("Running client simulated sql injection tests (localhost targets only!)");
             Utilities.Setup();
             
-            ISqlInjection siClient = new SimulatedCyberAttacks.attacks.web.page.SqlInjection("http://localhost:12738/WebBucketList/Desktop");
+            ISqlInjection siClient = new SimulatedCyberAttacks.attacks.web.page.SqlInjection(WebApiUrl + "/WebBucketList/Desktop");
             siClient.RunAttack();
         }
         private static void RunBasicTests()

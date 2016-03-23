@@ -59,6 +59,8 @@ namespace SimulatedCyberAttacks.attacks.web.rest
                 System.Threading.Thread.Sleep(this._testStepInterval);   //Make output readable and not a blur :)
             }
 
+            Program.SimulatedInjectionAttackesComplete = true;
+
             return result;
         }
         
