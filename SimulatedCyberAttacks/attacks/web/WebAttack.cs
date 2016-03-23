@@ -7,7 +7,7 @@ namespace SimulatedCyberAttacks.attacks.web
     public class WebAttack : Attack
     {
         protected string Url = string.Empty;
-        protected int _testStepInterval = 1000;        
+        protected int _testStepInterval = 100;        
         protected IList<string> attackStrings = null;
 
         protected void LoadSqlInjectionPayload()

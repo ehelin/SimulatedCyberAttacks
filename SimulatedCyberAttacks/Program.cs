@@ -6,6 +6,7 @@ namespace SimulatedCyberAttacks
 {
     class Program
     {
+        public static bool SimulatedInjectionAttackesComplete = false;
         static void Main(string[] args)
         {
             RunSimumatedAttacks();
@@ -21,6 +22,12 @@ namespace SimulatedCyberAttacks
             //RunBasicAttacks();
             RunServiceSimumatedSqlInjectionAttacks();
             //RunClientSimumatedSqlInjectionAttacks();
+
+            while (!SimulatedInjectionAttackesComplete)
+            {
+                System.Threading.Thread.Sleep(1000);
+                int waitForIt = 1;
+            }
 
             Console.WriteLine("Simulated attacks completed (localhost targets only!) - " + DateTime.Now.ToString());
         }        

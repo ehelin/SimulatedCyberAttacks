@@ -30,30 +30,38 @@ namespace SimulatedCyberAttacks.attacks.web.rest
 
             foreach(string attackString in attackStrings)
             {
-                System.Console.WriteLine("Running simulated attack for character '" + injectionString + "'");
-
-                //IEnumerable<string> values = await GetValues(c);
-                
+                System.Console.WriteLine("Running simulated attack for character '" + attackString + "'");
+                                
                 string token = await ProcessUser(c, attackString);
+                ReportResultString("", token, attackString, "ProcessUser(string, string)");
+                
+                System.Threading.Thread.Sleep(this._testStepInterval);   //Make output readable and not a blur :)
 
                 bool registered = await ProcessRegistration(c, attackString);
+                ReportResultBool(false, registered, attackString, "ProcessUserRegistration(string, string, string)");
+                
+                System.Threading.Thread.Sleep(this._testStepInterval);   //Make output readable and not a blur :)
                 
                 string[] bucketListItems = await GetBucketListItems(c, attackString);
+                string[] expected = new string[]{"ERR_000002-Token Expired"};
+                ReportResultStringArray(expected, bucketListItems, attackString, "GetBucketListItems(string, string, string)");
+
+                System.Threading.Thread.Sleep(this._testStepInterval);   //Make output readable and not a blur :)
 
                 string[] upsertResults = await Upsert(c, attackString);
+                ReportResultStringArray(expected, upsertResults, attackString, "UpsertBucketListItem(string, string, string)");
+
+                System.Threading.Thread.Sleep(this._testStepInterval);   //Make output readable and not a blur :)
 
                 string[] deleteResults = await Delete(c, attackString);
+                ReportResultStringArray(expected, deleteResults, attackString, "DeleteBucketListItem(int, string, string)");
+
+                System.Threading.Thread.Sleep(this._testStepInterval);   //Make output readable and not a blur :)
             }
 
             return result;
         }
-
-        private async Task<string[]> GetValues(Connect c)
-        {
-            string[] values = await c.GetValues().ConfigureAwait(false);
-
-            return values;
-        }
+        
         private async Task<string> ProcessUser(Connect c, string attackString)
         {
             string token = await c.ProcessUser(Utilities.EncodeClientBase64String(attackString), 
