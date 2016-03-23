@@ -9,6 +9,8 @@ namespace SimulatedCyberAttacks.attacks.web
 
         protected void SubmitAttackToLoginPage(string injectionString)
         {         
+            System.Threading.Thread.Sleep(1000);
+
             browser.FindElement(By.Id("loginDesktopUserName")).Clear();
             browser.FindElement(By.Id("loginDesktopPassWord")).Clear();
             

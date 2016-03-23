@@ -7,7 +7,7 @@ namespace SimulatedCyberAttacks
     class Program
     {
         public static bool SimulatedInjectionAttackesComplete = false;
-        private static string WebApiUrl = "http://http://localhost:12738";
+        private static string WebApiUrl = "http://localhost:12738";
 
         static void Main(string[] args)
         {
