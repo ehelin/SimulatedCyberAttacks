@@ -8,8 +8,7 @@ This project was created to run simulated cyber attacks on the .NET version of T
 
 These items are also related to this project. 
 
-* This blog post talks in detail about the satellite project - 
-<a href="https://erichelin.wordpress.com/2016/03/23/tgimba-security-sql-injection/">Introduction</a>
+* <a href="https://erichelin.wordpress.com/2016/03/23/tgimba-security-sql-injection/">Introduction</a>
 
 ## How To Use
 
